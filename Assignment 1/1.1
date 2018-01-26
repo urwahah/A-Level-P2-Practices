@@ -1,0 +1,31 @@
+Module Module1
+
+    Sub Main()
+        Dim membername As String = ""
+        Dim memberID As Integer = 0
+        Dim moremembers As Boolean = True
+
+        FileOpen(1, "d:\Practices\ClubRecord.txt", OpenMode.Output)
+
+        Do
+            Console.Write("Enter member ID number: ")
+            memberID = Console.ReadLine
+            Console.Write("Enter member name: ")
+            membername = Console.ReadLine
+            Console.WriteLine()
+
+            WriteLine(1, memberID)
+            WriteLine(1, membername)
+
+            Console.Write("Would you like to add more members? ")
+            moremembers = Console.ReadLine
+            Console.WriteLine()
+
+        Loop Until moremembers = False
+
+        FileClose(1)
+
+
+    End Sub
+
+End Module

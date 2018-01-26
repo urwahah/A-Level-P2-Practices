@@ -1,0 +1,40 @@
+Module Module1
+
+    Sub Main()
+        Dim membername As String = ""
+        Dim memberID As Integer = 0
+        Dim telno As String = ""
+        Dim startdate As Date
+
+        FileOpen(1, "d:\Practices\ClubRecord.txt", OpenMode.Input)
+        FileOpen(2, "d:\Practices\temp.txt", OpenMode.Output)
+
+        While Not EOF(1)
+
+            Input(1, memberID)
+            Input(1, membername)
+
+            Console.WriteLine("For member " & memberID & ", member name " & membername)
+            Console.Write("Enter telephone number: ")
+            telno = Console.ReadLine
+            Console.Write("Enter membership start date: ")
+            startdate = Console.ReadLine
+            Console.WriteLine()
+
+            WriteLine(2, memberID)
+            WriteLine(2, membername)
+            WriteLine(2, telno)
+            WriteLine(2, startdate)
+            WriteLine(2)
+
+        End While
+
+        FileClose(1)
+        FileClose(2)
+
+        My.Computer.FileSystem.DeleteFile("d:\Practices\ClubRecord.txt")
+        My.Computer.FileSystem.RenameFile("d:\Practices\temp.txt", "ClubRecord.txt")
+
+    End Sub
+
+End Module

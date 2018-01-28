@@ -33,8 +33,13 @@ Module Module1
                 End If
             End While
 
-            If isfound = False Then Console.WriteLine("Member name not found...")
-            Console.WriteLine()
+            If isfound = False Then
+                Console.WriteLine("Member name not found...")
+                Console.WriteLine()
+                Console.Write("Would you like to search more members? ")
+                moremembers = Console.ReadLine
+                Console.WriteLine()
+            End If
 
             FileClose(1)
         End While

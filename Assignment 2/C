@@ -1,0 +1,27 @@
+  Sub Main()
+
+        Dim S As String = ""
+        Dim character As Char = ""
+        Dim count As Integer = 0
+        Dim myWord As String = ""
+
+        Console.Write("Enter a string: ")
+        S = Console.ReadLine
+
+        character = Left(S, 1)
+
+        myWord = myWord & character
+
+        For count = 2 To Len(S)
+            If UCase(Mid(S, count, 1)) = UCase(character) Then
+                myWord = myWord & "*"
+            Else
+                myWord = myWord & Mid(S, count, 1)
+            End If
+        Next
+
+        Console.WriteLine(myWord)
+
+        Console.ReadKey()
+
+    End Sub

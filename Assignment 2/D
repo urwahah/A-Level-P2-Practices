@@ -1,0 +1,34 @@
+
+    Sub Main()
+        Dim A As String = ""
+        Dim B As String = ""
+        Dim count As Integer = 0
+        Dim firstA As String = ""
+        Dim firstB As String = ""
+        Dim mywordA As String = ""
+        Dim mywordB As String = ""
+
+        Console.Write("Enter string A: ")
+        A = Console.ReadLine
+        Console.Write("Enter string B: ")
+        B = Console.ReadLine
+        Console.WriteLine()
+
+        firstA = Left(A, 2)
+        firstB = Left(B, 2)
+
+        mywordA = mywordA & firstB
+        mywordB = mywordB & firstA
+
+        For count = 3 To Len(A)
+            mywordA = mywordA & Mid(A, count, 1)
+        Next
+
+        For count = 3 To Len(B)
+            mywordB = mywordB & Mid(B, count, 1)
+        Next
+
+        Console.WriteLine(mywordA & " " & mywordB)
+        Console.ReadKey()
+
+    End Sub

@@ -1,0 +1,83 @@
+ Sub Main()
+        Dim A As String = ""
+        Dim B As String = ""
+        Dim Apart1 As String = ""
+        Dim Apart2 As String = ""
+        Dim Bpart1 As String = ""
+        Dim Bpart2 As String = ""
+        Dim num As Integer = 0
+
+        Console.Write("1 string or 2? ")
+        num = Console.ReadLine
+        Console.WriteLine()
+
+        If num = 1 Then
+            Console.Write("Enter string: ")
+            A = Console.ReadLine
+
+            If Len(A) Mod 2 = 0 Then
+                For count = 1 To Len(A) / 2
+                    Apart1 = Apart1 & Mid(A, count, 1)
+                Next
+                For count = (Len(A) / 2) + 1 To Len(A)
+                    Apart2 = Apart2 & Mid(A, count, 1)
+                Next
+            Else
+                For count = 1 To Len(A) / 2 + 0.5
+                    Apart1 = Apart1 & Mid(A, count, 1)
+                Next
+                For count = (Len(A) / 2) + 1.5 To Len(A)
+                    Apart2 = Apart2 & Mid(A, count, 1)
+                Next
+            End If
+
+            Console.WriteLine("Front: " & Apart1)
+            Console.WriteLine("Back: " & Apart2)
+        End If
+
+        If num = 2 Then
+
+            Console.Write("Enter first string: ")
+            A = Console.ReadLine
+            Console.Write("Enter second string: ")
+            B = Console.ReadLine
+
+            If Len(A) Mod 2 = 0 Then
+                For count = 1 To Len(A) / 2
+                    Apart1 = Apart1 & Mid(A, count, 1)
+                Next
+                For count = (Len(A) / 2) + 1 To Len(A)
+                    Apart2 = Apart2 & Mid(A, count, 1)
+                Next
+            Else
+                For count = 1 To Len(A) / 2 + 0.5
+                    Apart1 = Apart1 & Mid(A, count, 1)
+                Next
+                For count = (Len(A) / 2) + 1.5 To Len(A)
+                    Apart2 = Apart2 & Mid(A, count, 1)
+                Next
+            End If
+
+            If Len(B) Mod 2 = 0 Then
+                For count = 1 To Len(B) / 2
+                    Apart1 = Apart1 & Mid(B, count, 1)
+                Next
+                For count = (Len(B) / 2) + 1 To Len(B)
+                    Apart2 = Apart2 & Mid(B, count, 1)
+                Next
+            Else
+                For count = 1 To Len(B) / 2 + 0.5
+                    Apart1 = Apart1 & Mid(B, count, 1)
+                Next
+                For count = (Len(B) / 2) + 1.5 To Len(B)
+                    Apart2 = Apart2 & Mid(B, count, 1)
+                Next
+            End If
+
+            Console.WriteLine(Apart1 & Bpart1 & Apart2 & Bpart2)
+
+        End If
+
+        Console.ReadKey()
+
+    End Sub

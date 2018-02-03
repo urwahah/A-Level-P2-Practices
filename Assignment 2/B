@@ -1,0 +1,20 @@
+ Sub Main()
+        Dim S As String = ""
+        Dim first2 As String = ""
+        Dim last2 As String = ""
+
+        Console.Write("Enter a string: ")
+        S = Console.ReadLine
+        If Len(S) < 2 Then
+            Console.WriteLine(" ")
+        Else
+            first2 = Left(S, 2)
+            last2 = Right(S, 2)
+
+            Console.WriteLine(first2 & last2)
+
+        End If
+        
+        Console.ReadKey()
+
+    End Sub

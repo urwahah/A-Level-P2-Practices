@@ -1,0 +1,30 @@
+Sub Main()
+        Dim STR1 As String = ""
+        Dim myString As String = ""
+        Dim notlocate As Integer = 0
+        Dim badlocate As Integer = 0
+        Dim count As Integer = 0
+
+        Console.Write("Enter a string: ")
+        STR1 = LCase(Console.ReadLine)
+
+        notlocate = InStr(STR1, "not")
+        badlocate = InStr(STR1, "bad")
+
+        If badlocate < notlocate Then
+            Console.WriteLine("Error.")
+        Else
+            For count = 1 To notlocate - 1
+                myString = myString & Mid(STR1, count, 1)
+            Next
+
+            myString = myString & "good"
+
+            For count = badlocate + 3 To Len(STR1)
+                myString = myString & Mid(STR1, count, 1)
+            Next
+        End If
+
+        Console.WriteLine(myString)
+        Console.ReadKey()
+    End Sub
